@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassWord</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; 
+            color: #343a40; 
+            margin: 0; 
+            padding: 20px; 
+            text-align: center;
+        }
+
+        h1 {
+            color: #c75757;
+            margin-bottom: 20px; 
+        }
+        h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px; 
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px; 
+            background-color: #969897;
+            color: white;
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+         }
+
+        input[type="submit"]:hover {
+            background-color: #218838; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated Password is : <h2>{{generatedpassword}}</h2></h1>
+    <form action="{{url_for('home')}}" method="get">
+        <input type="submit" value="Another PassWord">
+    </form>
+</body>
+</html>

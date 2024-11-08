@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <style>
+
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .al {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                margin-bottom: 20px;
+                color: #007bff;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            label {
+                font-size: 18px;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .container {
+                margin: 20px 0;
+            }
+
+            .form-check {
+                display: flex;
+                align-items: center;
+                margin: 10px 0;
+            }
+
+            .form-check input {
+                margin-right: 15px;
+            }
+
+            .btn {
+                background-color: #a7b3aa; 
+                color: white;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 15px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .btn:hover {
+                background-color: #218838;
+            }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="al">
+
+
+
+        {% if m %}
+        <p class="text-center" >{{ m }}</p>
+        {% endif %}
+
+        <div class="row text-center">
+
+            <div class="col">
+                <h2>Random
+                    Password Generator </h2>
+
+                <form action='/genpassword' method="POST" enctype="multipart/form-data">
+                    <label ><b>Enter Password Length</b></label>
+                    <br>
+                    <input type="text" id="passlen" name='passlen' required>
+                    <br>
+                    <div class="container">
+
+                        <div class="form-check">
+                            <input class="input" type="checkbox" name="numbers" id="includenumbers"checked>
+                            <label class="form-check-label" for="flexCheckChecked">Include Numbers</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="input" type="checkbox" name="splchar"
+                                id="includespecialchars" checked>
+                            <label class="form-check-label" for="flexCheckChecked">Include Symbols</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="input" type="checkbox" name="uppercase"
+                                id="includeuppercaseletters" checked>
+                            <label class="form-check-label" for="flexCheckChecked">Include UpperCase Letters</label>
+                        </div>
+                    </div>
+                    <button style="width: 232px;margin-top: 20px;font-size: 20px;" type='submit'
+                        class='btn btn-success'>Generate Password
+                    </button>
+                    <br>
+                </form>        
+            </div>
+    </div>
+</div>
+
+</body>
+
+</html>
